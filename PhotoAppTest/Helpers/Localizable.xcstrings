@@ -45,6 +45,17 @@
         }
       }
     },
+    "emptyPasswordError" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Empty passwrod"
+          }
+        }
+      }
+    },
     "invalidEmailError" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -52,6 +63,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Invalid email"
+          }
+        }
+      }
+    },
+    "smallPassword" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Small password"
           }
         }
       }

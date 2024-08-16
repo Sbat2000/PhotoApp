@@ -14,6 +14,9 @@ struct AuthenticationView: View {
     var body: some View {
         ZStack {
             Color.yellow.opacity(0.1).ignoresSafeArea()
+
+            SignUpView()
+
             VStack{
                 Spacer()
                 Text(signUp ? LocalizedStrings.alreadyHaveAccount : LocalizedStrings.dontHaveAnAccount)
