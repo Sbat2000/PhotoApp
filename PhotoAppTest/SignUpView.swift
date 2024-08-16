@@ -9,6 +9,8 @@ import SwiftUI
 
 struct SignUpView: View {
 
+    @State private var showAlert = false
+
     @StateObject private var email = Email()
     @StateObject private var password = Password()
 
@@ -19,6 +21,14 @@ struct SignUpView: View {
                 .padding(.bottom, 16)
             
             PasswordField(password: password)
+
+            AuthButton(
+                showAlert: $showAlert,
+                buttonTitle: LocalizedStrings.signUpButtonTitle,
+                backgroundColor: .yellow.opacity(0.9),
+                alertError: LocalizedStrings.error) {
+                    
+                }
         }
         .padding(.bottom, 55)
     }
