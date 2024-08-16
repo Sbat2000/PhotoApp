@@ -13,6 +13,7 @@ struct LocalizedStrings {
     static let emptyEmailError = LocalizedStringKey("emptyEmailError")
     static let invalidEmailError = LocalizedStringKey("invalidEmailError")
     static let email = LocalizedStringKey("email")
+    static let password = LocalizedStringKey("password")
     static let emptyPasswordError = LocalizedStringKey("emptyPasswordError")
     static let smallPassword = LocalizedStringKey("smallPassword")
 }

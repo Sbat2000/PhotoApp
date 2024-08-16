@@ -70,7 +70,7 @@ final class Password: FormValidation, ObservableObject {
                 if password.isEmpty {
                     self.error = LocalizedStrings.emptyPasswordError
                     return false
-                } else if password.count > 6 {
+                } else if password.count > 5 {
                     return true
                 } else {
                     self.error = LocalizedStrings.smallPassword

@@ -1,30 +1,30 @@
 //
-//  EmailField.swift
+//  PasswordField.swift
 //  PhotoAppTest
 //
-//  Created by Aleksandr Garipov on 16.08.2024.
+//  Created by Aleksandr Garipov on 17.08.2024.
 //
 
 import SwiftUI
 
-struct EmailField: View {
+struct PasswordField: View {
 
-    @ObservedObject var email: Email
+    @ObservedObject var password: Password
 
     var body: some View {
         VStack{
-            TextField(LocalizedStrings.email, text: $email.value)
+            SecureField(LocalizedStrings.password, text: $password.value)
                 .textInputAutocapitalization(.never)
                 .padding()
                 .overlay(RoundedRectangle(cornerRadius: 8)
-                    .stroke(email.isValid ? .gray.opacity(0.2) : .red, lineWidth: 2))
+                    .stroke(password.isValid ? .gray.opacity(0.2) : .red, lineWidth: 2))
                 .padding(.horizontal, 16)
                 .onSubmit {
-                    email.submitted()
+                    password.submitted()
                 }
-            
-            if !email.isValid {
-                Text(email.error)
+
+            if !password.isValid {
+                Text(password.error)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .fontWeight(.medium)
                     .foregroundStyle(Color.red)

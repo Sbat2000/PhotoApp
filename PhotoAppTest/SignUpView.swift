@@ -10,8 +10,14 @@ import SwiftUI
 struct SignUpView: View {
 
     @StateObject private var email = Email()
+    @StateObject private var password = Password()
 
     var body: some View {
-        EmailField(email: email)
+        VStack {
+            EmailField(email: email)
+                .padding(.bottom, 16)
+            
+            PasswordField(password: password)
+        }
     }
 }
