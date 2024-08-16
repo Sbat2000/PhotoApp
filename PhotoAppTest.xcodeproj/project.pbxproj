@@ -12,6 +12,7 @@
 		E2B74B212C6F8F0D00007709 /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B202C6F8F0D00007709 /* LocalizedStrings.swift */; };
 		E2B74B242C6F9A3800007709 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B232C6F9A3800007709 /* SignUpView.swift */; };
 		E2B74B272C6F9A7F00007709 /* FormValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B262C6F9A7F00007709 /* FormValidation.swift */; };
+		E2B74B2A2C6FAE5900007709 /* EmailField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B292C6FAE5900007709 /* EmailField.swift */; };
 		E2D2D6812C6F889500227981 /* PhotoAppTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2D6802C6F889500227981 /* PhotoAppTestApp.swift */; };
 		E2D2D6852C6F889700227981 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D2D6842C6F889700227981 /* Assets.xcassets */; };
 		E2D2D6882C6F889700227981 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D2D6872C6F889700227981 /* Preview Assets.xcassets */; };
@@ -27,6 +28,7 @@
 		E2B74B202C6F8F0D00007709 /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		E2B74B232C6F9A3800007709 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		E2B74B262C6F9A7F00007709 /* FormValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormValidation.swift; sourceTree = "<group>"; };
+		E2B74B292C6FAE5900007709 /* EmailField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailField.swift; sourceTree = "<group>"; };
 		E2D2D67D2C6F889500227981 /* PhotoAppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoAppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D2D6802C6F889500227981 /* PhotoAppTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppTestApp.swift; sourceTree = "<group>"; };
 		E2D2D6842C6F889700227981 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +65,14 @@
 				E2B74B262C6F9A7F00007709 /* FormValidation.swift */,
 			);
 			path = FormValidation;
+			sourceTree = "<group>";
+		};
+		E2B74B282C6FAE4500007709 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E2B74B292C6FAE5900007709 /* EmailField.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		E2D2D6742C6F889500227981 = {
@@ -123,6 +133,7 @@
 		E2D2D6972C6F8C7700227981 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				E2B74B282C6FAE4500007709 /* Components */,
 				E2B74B252C6F9A5D00007709 /* FormValidation */,
 				E2B74B222C6F9A2500007709 /* SignUp */,
 				E2D2D69A2C6F8CD700227981 /* AuthenticationView.swift */,
@@ -216,6 +227,7 @@
 				E2B74B242C6F9A3800007709 /* SignUpView.swift in Sources */,
 				E2B74B212C6F8F0D00007709 /* LocalizedStrings.swift in Sources */,
 				E2B74B272C6F9A7F00007709 /* FormValidation.swift in Sources */,
+				E2B74B2A2C6FAE5900007709 /* EmailField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

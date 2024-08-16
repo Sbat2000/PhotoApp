@@ -23,6 +23,17 @@
         }
       }
     },
+    "email" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Email"
+          }
+        }
+      }
+    },
     "emptyEmailError" : {
       "extractionState" : "manual",
       "localizations" : {

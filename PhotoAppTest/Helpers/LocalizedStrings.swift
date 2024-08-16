@@ -12,4 +12,5 @@ struct LocalizedStrings {
     static let dontHaveAnAccount = LocalizedStringKey("dontHaveAnAccount")
     static let emptyEmailError = LocalizedStringKey("emptyEmailError")
     static let invalidEmailError = LocalizedStringKey("invalidEmailError")
+    static let email = LocalizedStringKey("email")
 }
