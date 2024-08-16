@@ -14,10 +14,12 @@ struct SignUpView: View {
 
     var body: some View {
         VStack {
+            TitleView(text: LocalizedStrings.createAccount)
             EmailField(email: email)
                 .padding(.bottom, 16)
             
             PasswordField(password: password)
         }
+        .padding(.bottom, 55)
     }
 }

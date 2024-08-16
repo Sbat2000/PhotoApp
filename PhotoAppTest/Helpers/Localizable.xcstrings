@@ -12,6 +12,17 @@
         }
       }
     },
+    "createAccount" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Create an account"
+          }
+        }
+      }
+    },
     "dontHaveAnAccount" : {
       "extractionState" : "manual",
       "localizations" : {
