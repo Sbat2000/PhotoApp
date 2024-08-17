@@ -25,4 +25,5 @@ struct LocalizedStrings {
     static let loading              = LocalizedStringKey("loading")
     static let forgotPassword       = LocalizedStringKey("forgotPassword")
     static let signInWithGoogle     = LocalizedStringKey("signInWithGoogle")
+    static let resetPassword        = LocalizedStringKey("resetPassword")
 }
