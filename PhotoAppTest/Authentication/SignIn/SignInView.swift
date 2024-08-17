@@ -54,7 +54,12 @@ struct SignInView: View {
                 }
             GoogleAuthButton()
                 .onTapGesture {
-                    
+                    if signInViewModel.signInState == .initial || signInViewModel.signInState == .failed {
+                        Task {
+                            await signInViewModel.signInWithGoogle()
+                            showAlert = signInViewModel.signInState == .failed
+                        }
+                    }
                 }
         }
         .padding(.bottom, 55)

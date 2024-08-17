@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AuthenticationView: View {
 
-    @State private var signUp: Bool = true
+    @State private var signUp: Bool = false
 
     private let pageTransition: AnyTransition = .asymmetric(
         insertion: .scale(scale: 0.9).combined(with: .opacity)
