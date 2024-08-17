@@ -26,7 +26,8 @@ final class SignUpViewModel: ObservableObject {
         signUpState = .submitting
 
         do {
-            try await Auth.auth().createUser(withEmail: newEmail, password: password)
+            let authDataResult = try await Auth.auth().createUser(withEmail: newEmail, password: password)
+            try await authDataResult.user.sendEmailVerification()
             signUpState = .succeeded
         } catch {
             errorMessage = error.localizedDescription
