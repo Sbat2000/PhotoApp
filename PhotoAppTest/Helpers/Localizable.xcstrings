@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "" : {
+
+    },
     "alertOkButton" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -89,6 +92,9 @@
         }
       }
     },
+    "Failed" : {
+
+    },
     "invalidEmailError" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -100,6 +106,17 @@
         }
       }
     },
+    "loading" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading..."
+          }
+        }
+      }
+    },
     "password" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -107,6 +124,20 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Password"
+          }
+        }
+      }
+    },
+    "Sign Out" : {
+
+    },
+    "signInButtonTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign In"
           }
         }
       }
@@ -129,6 +160,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Small password"
+          }
+        }
+      }
+    },
+    "user email: %@" : {
+
+    },
+    "userID: %@" : {
+
+    },
+    "welcomeBack" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Welcome back"
           }
         }
       }

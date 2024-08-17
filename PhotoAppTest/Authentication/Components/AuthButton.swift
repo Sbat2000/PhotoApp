@@ -12,7 +12,7 @@ struct AuthButton: View {
     @Binding var showAlert: Bool
     var buttonTitle: LocalizedStringKey
     var backgroundColor: Color
-    var alertError: LocalizedStringKey
+    var alertError: String
     var onTap: () -> ()
 
     var body: some View {

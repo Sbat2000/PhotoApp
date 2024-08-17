@@ -17,7 +17,10 @@ struct LocalizedStrings {
     static let emptyPasswordError = LocalizedStringKey("emptyPasswordError")
     static let smallPassword = LocalizedStringKey("smallPassword")
     static let createAccount = LocalizedStringKey("createAccount")
+    static let welcomeBack = LocalizedStringKey("welcomeBack")
     static let alertOkButton = LocalizedStringKey("alertOkButton")
     static let signUpButtonTitle = LocalizedStringKey("signUpButtonTitle")
+    static let signInButtonTitle = LocalizedStringKey("signInButtonTitle")
     static let error = LocalizedStringKey("error")
+    static let loading = LocalizedStringKey("loading")
 }

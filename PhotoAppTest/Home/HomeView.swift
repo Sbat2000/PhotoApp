@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct HomeView: View {
+
+    @EnvironmentObject private var authController: AuthController
+
     var body: some View {
         VStack {
-            Text("userID: ")
-            Text("user email: ")
+            Text("userID: \(authController.authUser.id)")
+            Text("user email: \(authController.authUser.email)")
+            Button("Sign Out") {
+                authController.signOut()
+            }
         }
     }
-}
-
-#Preview {
-    HomeView()
 }

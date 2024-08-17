@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct AuthenticationFlow: View {
+
+    @StateObject private var authController = AuthController()
+
     var body: some View {
-        AuthenticationView()
+
+        Group {
+            if authController.authState == .authenticated {
+                HomeView()
+            } else {
+                AuthenticationView()
+            }
+        }.environmentObject(authController)
     }
 }
 

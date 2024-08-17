@@ -1,34 +1,34 @@
 //
-//  SignUpView.swift
+//  SignInView.swift
 //  PhotoAppTest
 //
-//  Created by Aleksandr Garipov on 16.08.2024.
+//  Created by Aleksandr Garipov on 17.08.2024.
 //
 
 import SwiftUI
 
-struct SignUpView: View {
+struct SignInView: View {
 
     @State private var showAlert = false
 
     @StateObject private var email = Email()
     @StateObject private var password = Password()
-    @StateObject private var signUpViewModel = SignUpViewModel()
+    @StateObject private var signInViewModel = SignInViewModel()
 
     var body: some View {
         VStack {
-            TitleView(text: LocalizedStrings.createAccount)
+            TitleView(text: LocalizedStrings.welcomeBack)
             EmailField(email: email)
                 .padding(.bottom, 16)
-            
+
             PasswordField(password: password)
 
             AuthButton(
                 showAlert: $showAlert,
-                buttonTitle: signUpViewModel.signUpState == .submitting ?  LocalizedStrings.loading : LocalizedStrings.signUpButtonTitle,
-                backgroundColor: signUpViewModel.signUpState == .submitting ? .gray : .yellow.opacity(0.9),
-                alertError: signUpViewModel.errorMessage) {
-                    if signUpViewModel.signUpState == .initial || signUpViewModel.signUpState == .failed {
+                buttonTitle: signInViewModel.signInState == .submitting ?  LocalizedStrings.loading : LocalizedStrings.signInButtonTitle,
+                backgroundColor: signInViewModel.signInState == .submitting ? .gray : .green.opacity(0.9),
+                alertError: signInViewModel.errorMessage) {
+                    if signInViewModel.signInState == .initial || signInViewModel.signInState == .failed {
                         email.submitted()
                         password.submitted()
 
@@ -40,12 +40,16 @@ struct SignUpView: View {
                         let password = password.value
 
                         Task {
-                            await signUpViewModel.signUp(email, password)
-                            showAlert = signUpViewModel.signUpState == .failed
+                            await signInViewModel.signIn(email, password)
+                            showAlert = signInViewModel.signInState == .failed
                         }
                     }
                 }
         }
         .padding(.bottom, 55)
     }
+}
+
+#Preview {
+    SignInView()
 }

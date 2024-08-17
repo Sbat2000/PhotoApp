@@ -11,11 +11,23 @@ struct AuthenticationView: View {
 
     @State private var signUp: Bool = true
 
+    private let pageTransition: AnyTransition = .asymmetric(
+        insertion: .scale(scale: 0.9).combined(with: .opacity)
+            .animation(.interpolatingSpring(stiffness: 180, damping: 12).delay(0.7)),
+        removal: .scale(scale: 0.9).combined(with: .opacity).animation(.easeOut(duration: 0.5).delay(0.2))
+    )
+
     var body: some View {
         ZStack {
             Color.yellow.opacity(0.1).ignoresSafeArea()
 
-            SignUpView()
+            if signUp {
+                SignUpView()
+                    .transition(pageTransition)
+            } else {
+                SignInView()
+                    .transition(pageTransition)
+            }
 
             VStack{
                 Spacer()
