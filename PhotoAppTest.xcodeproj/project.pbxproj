@@ -21,6 +21,10 @@
 		E2B74B372C70474800007709 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B362C70474800007709 /* SignInViewModel.swift */; };
 		E2B74B3A2C7048BE00007709 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B392C7048BE00007709 /* AuthController.swift */; };
 		E2B74B3D2C70491400007709 /* AuthUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B3C2C70491400007709 /* AuthUserModel.swift */; };
+		E2B74B402C7093EF00007709 /* ForgotTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B3F2C7093EF00007709 /* ForgotTitleModifier.swift */; };
+		E2B74B432C70974100007709 /* ForgotPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B422C70974100007709 /* ForgotPassword.swift */; };
+		E2B74B452C70983C00007709 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B442C70983C00007709 /* ForgotPasswordViewModel.swift */; };
+		E2B74B472C7098BB00007709 /* GoogleAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B462C7098BB00007709 /* GoogleAuthButton.swift */; };
 		E2D2D6812C6F889500227981 /* PhotoAppTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2D6802C6F889500227981 /* PhotoAppTestApp.swift */; };
 		E2D2D6852C6F889700227981 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D2D6842C6F889700227981 /* Assets.xcassets */; };
 		E2D2D6882C6F889700227981 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D2D6872C6F889700227981 /* Preview Assets.xcassets */; };
@@ -45,6 +49,10 @@
 		E2B74B362C70474800007709 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		E2B74B392C7048BE00007709 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		E2B74B3C2C70491400007709 /* AuthUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUserModel.swift; sourceTree = "<group>"; };
+		E2B74B3F2C7093EF00007709 /* ForgotTitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotTitleModifier.swift; sourceTree = "<group>"; };
+		E2B74B422C70974100007709 /* ForgotPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassword.swift; sourceTree = "<group>"; };
+		E2B74B442C70983C00007709 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		E2B74B462C7098BB00007709 /* GoogleAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthButton.swift; sourceTree = "<group>"; };
 		E2D2D67D2C6F889500227981 /* PhotoAppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoAppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D2D6802C6F889500227981 /* PhotoAppTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppTestApp.swift; sourceTree = "<group>"; };
 		E2D2D6842C6F889700227981 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,6 +99,7 @@
 				E2B74B2B2C6FB5D700007709 /* PasswordField.swift */,
 				E2B74B2D2C6FB9C700007709 /* TitleView.swift */,
 				E2B74B2F2C6FBB7D00007709 /* AuthButton.swift */,
+				E2B74B462C7098BB00007709 /* GoogleAuthButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -118,6 +127,23 @@
 				E2B74B3C2C70491400007709 /* AuthUserModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		E2B74B3E2C7093AC00007709 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				E2B74B3F2C7093EF00007709 /* ForgotTitleModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
+		E2B74B412C70973000007709 /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				E2B74B422C70974100007709 /* ForgotPassword.swift */,
+				E2B74B442C70983C00007709 /* ForgotPasswordViewModel.swift */,
+			);
+			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
 		E2D2D6742C6F889500227981 = {
@@ -178,10 +204,12 @@
 		E2D2D6972C6F8C7700227981 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				E2B74B412C70973000007709 /* ForgotPassword */,
 				E2B74B3B2C70490600007709 /* Models */,
 				E2B74B382C7048AD00007709 /* AuthController */,
 				E2B74B222C6F9A2500007709 /* SignUp */,
 				E2B74B332C70472100007709 /* SignIn */,
+				E2B74B3E2C7093AC00007709 /* ViewModifiers */,
 				E2B74B282C6FAE4500007709 /* Components */,
 				E2B74B252C6F9A5D00007709 /* FormValidation */,
 				E2D2D69A2C6F8CD700227981 /* AuthenticationView.swift */,
@@ -268,6 +296,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B74B472C7098BB00007709 /* GoogleAuthButton.swift in Sources */,
 				E2B74B3D2C70491400007709 /* AuthUserModel.swift in Sources */,
 				E2D2D6992C6F8C9100227981 /* HomeView.swift in Sources */,
 				E2D2D6812C6F889500227981 /* PhotoAppTestApp.swift in Sources */,
@@ -279,8 +308,11 @@
 				E2B74B3A2C7048BE00007709 /* AuthController.swift in Sources */,
 				E2B74B212C6F8F0D00007709 /* LocalizedStrings.swift in Sources */,
 				E2B74B372C70474800007709 /* SignInViewModel.swift in Sources */,
+				E2B74B452C70983C00007709 /* ForgotPasswordViewModel.swift in Sources */,
+				E2B74B432C70974100007709 /* ForgotPassword.swift in Sources */,
 				E2B74B272C6F9A7F00007709 /* FormValidation.swift in Sources */,
 				E2B74B2A2C6FAE5900007709 /* EmailField.swift in Sources */,
+				E2B74B402C7093EF00007709 /* ForgotTitleModifier.swift in Sources */,
 				E2B74B322C6FBEFE00007709 /* SignUpViewModel.swift in Sources */,
 				E2B74B2E2C6FB9C700007709 /* TitleView.swift in Sources */,
 				E2B74B352C70473400007709 /* SignInView.swift in Sources */,

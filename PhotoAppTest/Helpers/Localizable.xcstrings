@@ -95,6 +95,17 @@
     "Failed" : {
 
     },
+    "forgotPassword" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Forgot Password"
+          }
+        }
+      }
+    },
     "invalidEmailError" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -138,6 +149,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sign In"
+          }
+        }
+      }
+    },
+    "signInWithGoogle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sign In With Google"
           }
         }
       }

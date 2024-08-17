@@ -10,6 +10,7 @@ import SwiftUI
 struct SignInView: View {
 
     @State private var showAlert = false
+    @State private var showSheet = false
 
     @StateObject private var email = Email()
     @StateObject private var password = Password()
@@ -22,6 +23,12 @@ struct SignInView: View {
                 .padding(.bottom, 16)
 
             PasswordField(password: password)
+
+            Text(LocalizedStrings.forgotPassword)
+                .modifier(ForgotTitleModifier())
+                .onTapGesture {
+                    showSheet.toggle()
+                }
 
             AuthButton(
                 showAlert: $showAlert,
@@ -45,8 +52,15 @@ struct SignInView: View {
                         }
                     }
                 }
+            GoogleAuthButton()
+                .onTapGesture {
+                    
+                }
         }
         .padding(.bottom, 55)
+        .sheet(isPresented: $showSheet) {
+            ForgotPassword()
+        }
     }
 }
 
