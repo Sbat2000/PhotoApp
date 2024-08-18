@@ -27,6 +27,7 @@ final class DrawingViewModel: ObservableObject {
     @Published var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @Published var showFilterSheet: Bool = false
     @Published var selectedFilter: CIFilter? = nil
+    @Published var currentScale: CGFloat = 1.0
 
     func cancelImageEditing() {
         imageData = Data(count: 0)

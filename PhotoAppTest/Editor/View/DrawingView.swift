@@ -19,7 +19,13 @@ struct DrawingView: View {
                 let calculatedHeight = screenWidth * aspectRatio
                 let size = CGSize(width: screenWidth, height: calculatedHeight)
 
-                CanvasView(canvas: $viewModel.canvas, imageData: $viewModel.imageData, toolPicker: $viewModel.toolPicker, selectedFilter: $viewModel.selectedFilter, rect: size)
+                CanvasView(
+                    canvas: $viewModel.canvas,
+                    imageData: $viewModel.imageData,
+                    toolPicker: $viewModel.toolPicker,
+                    selectedFilter: $viewModel.selectedFilter,
+                    currentScale: $viewModel.currentScale, rect: size
+                )
                     .frame(width: size.width, height: size.height)
                     .onAppear() {
                         DispatchQueue.main.async {
@@ -79,7 +85,11 @@ struct DrawingView: View {
                     Image(systemName: "wand.and.stars")
                 })
                 .sheet(isPresented: $viewModel.showFilterSheet) {
-                    FilterSelectionView(selectedFilter: $viewModel.selectedFilter, showFilterSheet: $viewModel.showFilterSheet)
+                    FilterSelectionView(
+                        selectedFilter: $viewModel.selectedFilter,
+                        showFilterSheet: $viewModel.showFilterSheet,
+                        currentScale: $viewModel.currentScale
+                    )
                 }
             }
         }

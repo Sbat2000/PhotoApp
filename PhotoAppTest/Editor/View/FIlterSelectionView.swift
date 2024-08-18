@@ -12,6 +12,7 @@ import SwiftUI
 struct FilterSelectionView: View {
     @Binding var selectedFilter: CIFilter?
     @Binding var showFilterSheet: Bool
+    @Binding var currentScale: CGFloat
 
     let filters: [(name: LocalizedStringKey, filter: CIFilter)] = [
         (LocalizedStrings.sepiaTone, CIFilter(name: "CISepiaTone")!),
@@ -32,7 +33,16 @@ struct FilterSelectionView: View {
                 }
             }
 
-            // Кнопка "Reset Filters" с локализованной строкой
+
+            Button(action: {
+                currentScale = 1.0
+                showFilterSheet.toggle()
+            }) {
+                Text(LocalizedStrings.resetScale)
+                    .foregroundColor(.red)
+                    .fontWeight(.bold)
+            }
+
             Button(action: {
                 selectedFilter = nil
                 showFilterSheet.toggle()

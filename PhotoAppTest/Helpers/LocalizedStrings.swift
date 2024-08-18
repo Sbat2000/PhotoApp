@@ -47,5 +47,7 @@ struct LocalizedStrings {
     static let chrome = LocalizedStringKey("Chrome")
     static let instant = LocalizedStringKey("Instant")
     static let transfer = LocalizedStringKey("Transfer")
+
+    static let resetScale = LocalizedStringKey("resetScale")
     static let resetFilters = LocalizedStringKey("Reset Filters")
 }

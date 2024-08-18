@@ -14,6 +14,7 @@ struct CanvasView: UIViewRepresentable {
     @Binding var imageData: Data
     @Binding var toolPicker: PKToolPicker
     @Binding var selectedFilter: CIFilter?
+    @Binding var currentScale: CGFloat
 
     var rect: CGSize
     class Coordinator {
@@ -29,7 +30,9 @@ struct CanvasView: UIViewRepresentable {
            canvas.backgroundColor = .clear
            canvas.drawingPolicy = .anyInput
 
-           // Настраиваем инструментальный набор
+           let pinchGesture = UIPinchGestureRecognizer(target: context.coordinator, action: #selector(context.coordinator.handlePinch(_:)))
+           canvas.addGestureRecognizer(pinchGesture)
+
            toolPicker.setVisible(true, forFirstResponder: canvas)
            toolPicker.addObserver(canvas)
            canvas.becomeFirstResponder()
@@ -58,6 +61,7 @@ struct CanvasView: UIViewRepresentable {
                    let calculatedHeight = rect.width * aspectRatio
                    imageView.frame = CGRect(x: 0, y: 0, width: rect.width, height: calculatedHeight)
                    uiView.frame = CGRect(x: 0, y: 0, width: rect.width, height: calculatedHeight)
+                   imageView.transform = CGAffineTransform(scaleX: currentScale, y: currentScale)
                }
            }
        }
@@ -79,6 +83,18 @@ struct CanvasView: UIViewRepresentable {
 
            return UIImage(cgImage: cgImage, scale: image.scale, orientation: image.imageOrientation)
        }
+}
+
+extension CanvasView.Coordinator {
+    @objc func handlePinch(_ sender: UIPinchGestureRecognizer) {
+        guard let imageView = imageView else { return }
+
+        if sender.state == .began || sender.state == .changed {
+            let scale = sender.scale
+            imageView.transform = imageView.transform.scaledBy(x: scale, y: scale)
+            sender.scale = 1.0
+        }
+    }
 }
 
 #Preview {
