@@ -31,6 +31,8 @@
 		E2B74B552C71A5B000007709 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B542C71A5B000007709 /* ImagePicker.swift */; };
 		E2B74B572C71A63900007709 /* DrawingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B562C71A63900007709 /* DrawingViewModel.swift */; };
 		E2B74B5A2C71A7FD00007709 /* AddButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B592C71A7FD00007709 /* AddButtonModifier.swift */; };
+		E2B74B5C2C71ADF600007709 /* DrawingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B5B2C71ADF600007709 /* DrawingView.swift */; };
+		E2B74B5E2C71AEED00007709 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B5D2C71AEED00007709 /* CanvasView.swift */; };
 		E2D2D6812C6F889500227981 /* PhotoAppTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2D6802C6F889500227981 /* PhotoAppTestApp.swift */; };
 		E2D2D6852C6F889700227981 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D2D6842C6F889700227981 /* Assets.xcassets */; };
 		E2D2D6882C6F889700227981 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D2D6872C6F889700227981 /* Preview Assets.xcassets */; };
@@ -64,6 +66,8 @@
 		E2B74B542C71A5B000007709 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E2B74B562C71A63900007709 /* DrawingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewModel.swift; sourceTree = "<group>"; };
 		E2B74B592C71A7FD00007709 /* AddButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonModifier.swift; sourceTree = "<group>"; };
+		E2B74B5B2C71ADF600007709 /* DrawingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingView.swift; sourceTree = "<group>"; };
+		E2B74B5D2C71AEED00007709 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
 		E2D2D67D2C6F889500227981 /* PhotoAppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoAppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D2D6802C6F889500227981 /* PhotoAppTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppTestApp.swift; sourceTree = "<group>"; };
 		E2D2D6842C6F889700227981 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 				E2B74B522C71A50500007709 /* ViewModel */,
 				E2B74B512C71A4FF00007709 /* View */,
 				E2B74B542C71A5B000007709 /* ImagePicker.swift */,
+				E2B74B5D2C71AEED00007709 /* CanvasView.swift */,
 			);
 			path = Editor;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				E2B74B4F2C71A4EA00007709 /* EditorView.swift */,
+				E2B74B5B2C71ADF600007709 /* DrawingView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 			files = (
 				E2B74B472C7098BB00007709 /* GoogleAuthButton.swift in Sources */,
 				E2B74B3D2C70491400007709 /* AuthUserModel.swift in Sources */,
+				E2B74B5E2C71AEED00007709 /* CanvasView.swift in Sources */,
 				E2D2D6992C6F8C9100227981 /* HomeView.swift in Sources */,
 				E2B74B502C71A4EA00007709 /* EditorView.swift in Sources */,
 				E2D2D6812C6F889500227981 /* PhotoAppTestApp.swift in Sources */,
@@ -366,6 +373,7 @@
 				E2B74B242C6F9A3800007709 /* SignUpView.swift in Sources */,
 				E2B74B302C6FBB7D00007709 /* AuthButton.swift in Sources */,
 				E2B74B3A2C7048BE00007709 /* AuthController.swift in Sources */,
+				E2B74B5C2C71ADF600007709 /* DrawingView.swift in Sources */,
 				E2B74B212C6F8F0D00007709 /* LocalizedStrings.swift in Sources */,
 				E2B74B372C70474800007709 /* SignInViewModel.swift in Sources */,
 				E2B74B452C70983C00007709 /* ForgotPasswordViewModel.swift in Sources */,

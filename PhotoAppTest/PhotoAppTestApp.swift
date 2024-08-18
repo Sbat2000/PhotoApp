@@ -14,7 +14,8 @@ struct PhotoAppTestApp: App {
 
     var body: some Scene {
         WindowGroup {
-            AuthenticationFlow()
+//            AuthenticationFlow()
+            EditorView()
         }
     }
 }

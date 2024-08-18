@@ -35,7 +35,7 @@ struct ImagePicker: UIViewControllerRepresentable {
     }
 
     func makeCoordinator() -> Coordinator {
-        return Coordinator(parent: self)
+        return ImagePicker.Coordinator(parent: self)
     }
 
     func makeUIViewController(context: Context) -> UIImagePickerController {

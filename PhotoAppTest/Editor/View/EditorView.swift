@@ -15,9 +15,17 @@ struct EditorView: View {
         NavigationView {
             VStack {
                 if let imageFile = UIImage(data: viewModel.imageData) {
-                    Image(uiImage: imageFile)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
+                    DrawingView()
+                        .environmentObject(viewModel)
+                        .toolbar() {
+                            ToolbarItem(placement: .topBarLeading) {
+                                Button {
+                                    viewModel.cancelImageEditing()
+                                } label: {
+                                    Image(systemName: "xmark")
+                                }
+                            }
+                        }
                 } else {
                     Button {
                         viewModel.showImagePicker.toggle()
