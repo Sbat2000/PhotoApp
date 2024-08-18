@@ -90,8 +90,18 @@ extension CanvasView.Coordinator {
         guard let imageView = imageView else { return }
 
         if sender.state == .began || sender.state == .changed {
+            let locationInView = sender.location(in: imageView)
+
             let scale = sender.scale
             imageView.transform = imageView.transform.scaledBy(x: scale, y: scale)
+
+            let newLocationInView = sender.location(in: imageView)
+            let translation = CGPoint(
+                x: newLocationInView.x - locationInView.x,
+                y: newLocationInView.y - locationInView.y
+            )
+            imageView.transform = imageView.transform.translatedBy(x: translation.x, y: translation.y)
+
             sender.scale = 1.0
         }
     }
