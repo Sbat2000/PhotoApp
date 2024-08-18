@@ -10,6 +10,7 @@ import SwiftUI
 struct EditorView: View {
 
     @StateObject var viewModel = DrawingViewModel()
+    @EnvironmentObject private var authController: AuthController
     @State private var showActionSheet = false
 
     var body: some View {
@@ -25,6 +26,13 @@ struct EditorView: View {
                                         viewModel.cancelImageEditing()
                                     } label: {
                                         Image(systemName: "xmark")
+                                    }
+                                }
+                                if authController.authState == .authenticated {
+                                    ToolbarItem(placement: .topBarTrailing) {
+                                        NavigationLink(destination: ProfileView()) {
+                                            Image(systemName: "person.circle")
+                                        }
                                     }
                                 }
                             }
@@ -118,5 +126,7 @@ struct EditorView: View {
 }
 
 #Preview {
-    EditorView()
+    let authController = AuthController()
+    return EditorView()
+        .environmentObject(authController)
 }

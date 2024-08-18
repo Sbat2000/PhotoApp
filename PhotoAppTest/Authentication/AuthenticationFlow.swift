@@ -15,7 +15,7 @@ struct AuthenticationFlow: View {
 
         Group {
             if authController.authState == .authenticated {
-                HomeView()
+                EditorView()
             } else {
                 AuthenticationView()
             }

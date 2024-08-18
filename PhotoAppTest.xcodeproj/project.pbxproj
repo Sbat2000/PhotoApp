@@ -39,7 +39,7 @@
 		E2D2D6852C6F889700227981 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D2D6842C6F889700227981 /* Assets.xcassets */; };
 		E2D2D6882C6F889700227981 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D2D6872C6F889700227981 /* Preview Assets.xcassets */; };
 		E2D2D6932C6F8B3300227981 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E2D2D6922C6F8B3300227981 /* FirebaseAuth */; };
-		E2D2D6992C6F8C9100227981 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2D6982C6F8C9100227981 /* HomeView.swift */; };
+		E2D2D6992C6F8C9100227981 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2D6982C6F8C9100227981 /* ProfileView.swift */; };
 		E2D2D69B2C6F8CD700227981 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2D69A2C6F8CD700227981 /* AuthenticationView.swift */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +76,7 @@
 		E2D2D6802C6F889500227981 /* PhotoAppTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppTestApp.swift; sourceTree = "<group>"; };
 		E2D2D6842C6F889700227981 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2D2D6872C6F889700227981 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		E2D2D6982C6F8C9100227981 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E2D2D6982C6F8C9100227981 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		E2D2D69A2C6F8CD700227981 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -264,7 +264,7 @@
 		E2D2D6962C6F8C7100227981 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				E2D2D6982C6F8C9100227981 /* HomeView.swift */,
+				E2D2D6982C6F8C9100227981 /* ProfileView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -369,7 +369,7 @@
 				E2B74B472C7098BB00007709 /* GoogleAuthButton.swift in Sources */,
 				E2B74B3D2C70491400007709 /* AuthUserModel.swift in Sources */,
 				E2B74B5E2C71AEED00007709 /* CanvasView.swift in Sources */,
-				E2D2D6992C6F8C9100227981 /* HomeView.swift in Sources */,
+				E2D2D6992C6F8C9100227981 /* ProfileView.swift in Sources */,
 				E2B74B502C71A4EA00007709 /* EditorView.swift in Sources */,
 				E2D2D6812C6F889500227981 /* PhotoAppTestApp.swift in Sources */,
 				E2D2D69B2C6F8CD700227981 /* AuthenticationView.swift in Sources */,

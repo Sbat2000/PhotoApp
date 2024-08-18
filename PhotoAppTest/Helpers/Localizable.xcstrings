@@ -427,12 +427,6 @@
         }
       }
     },
-    "user email: %@" : {
-
-    },
-    "userID: %@" : {
-
-    },
     "welcomeBack" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -443,6 +437,9 @@
           }
         }
       }
+    },
+    "Your email: %@" : {
+
     }
   },
   "version" : "1.0"

@@ -7,14 +7,13 @@
 
 import SwiftUI
 
-struct HomeView: View {
+struct ProfileView: View {
 
     @EnvironmentObject private var authController: AuthController
 
     var body: some View {
         VStack {
-            Text("userID: \(authController.authUser.id)")
-            Text("user email: \(authController.authUser.email)")
+            Text("Your email: \(authController.authUser.email)")
             Button("Sign Out") {
                 authController.signOut()
             }
