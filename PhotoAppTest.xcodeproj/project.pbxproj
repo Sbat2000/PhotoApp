@@ -27,6 +27,10 @@
 		E2B74B472C7098BB00007709 /* GoogleAuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B462C7098BB00007709 /* GoogleAuthButton.swift */; };
 		E2B74B492C709D7400007709 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2B74B482C709D7400007709 /* GoogleService-Info.plist */; };
 		E2B74B4D2C709E4A00007709 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = E2B74B4C2C709E4A00007709 /* GoogleSignIn */; };
+		E2B74B502C71A4EA00007709 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B4F2C71A4EA00007709 /* EditorView.swift */; };
+		E2B74B552C71A5B000007709 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B542C71A5B000007709 /* ImagePicker.swift */; };
+		E2B74B572C71A63900007709 /* DrawingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B562C71A63900007709 /* DrawingViewModel.swift */; };
+		E2B74B5A2C71A7FD00007709 /* AddButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B74B592C71A7FD00007709 /* AddButtonModifier.swift */; };
 		E2D2D6812C6F889500227981 /* PhotoAppTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D2D6802C6F889500227981 /* PhotoAppTestApp.swift */; };
 		E2D2D6852C6F889700227981 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D2D6842C6F889700227981 /* Assets.xcassets */; };
 		E2D2D6882C6F889700227981 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2D2D6872C6F889700227981 /* Preview Assets.xcassets */; };
@@ -56,6 +60,10 @@
 		E2B74B462C7098BB00007709 /* GoogleAuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthButton.swift; sourceTree = "<group>"; };
 		E2B74B482C709D7400007709 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2B74B4A2C709DF600007709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		E2B74B4F2C71A4EA00007709 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
+		E2B74B542C71A5B000007709 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		E2B74B562C71A63900007709 /* DrawingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingViewModel.swift; sourceTree = "<group>"; };
+		E2B74B592C71A7FD00007709 /* AddButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonModifier.swift; sourceTree = "<group>"; };
 		E2D2D67D2C6F889500227981 /* PhotoAppTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoAppTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2D2D6802C6F889500227981 /* PhotoAppTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoAppTestApp.swift; sourceTree = "<group>"; };
 		E2D2D6842C6F889700227981 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,6 +157,49 @@
 			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
+		E2B74B4E2C71A4DC00007709 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				E2B74B582C71A7EE00007709 /* ViewModifiers */,
+				E2B74B532C71A50A00007709 /* Model */,
+				E2B74B522C71A50500007709 /* ViewModel */,
+				E2B74B512C71A4FF00007709 /* View */,
+				E2B74B542C71A5B000007709 /* ImagePicker.swift */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		E2B74B512C71A4FF00007709 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2B74B4F2C71A4EA00007709 /* EditorView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E2B74B522C71A50500007709 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E2B74B562C71A63900007709 /* DrawingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E2B74B532C71A50A00007709 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E2B74B582C71A7EE00007709 /* ViewModifiers */ = {
+			isa = PBXGroup;
+			children = (
+				E2B74B592C71A7FD00007709 /* AddButtonModifier.swift */,
+			);
+			path = ViewModifiers;
+			sourceTree = "<group>";
+		};
 		E2D2D6742C6F889500227981 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +219,7 @@
 		E2D2D67F2C6F889500227981 /* PhotoAppTest */ = {
 			isa = PBXGroup;
 			children = (
+				E2B74B4E2C71A4DC00007709 /* Editor */,
 				E2B74B4A2C709DF600007709 /* Info.plist */,
 				E2D2D6972C6F8C7700227981 /* Authentication */,
 				E2D2D6962C6F8C7100227981 /* Home */,
@@ -305,9 +357,11 @@
 				E2B74B472C7098BB00007709 /* GoogleAuthButton.swift in Sources */,
 				E2B74B3D2C70491400007709 /* AuthUserModel.swift in Sources */,
 				E2D2D6992C6F8C9100227981 /* HomeView.swift in Sources */,
+				E2B74B502C71A4EA00007709 /* EditorView.swift in Sources */,
 				E2D2D6812C6F889500227981 /* PhotoAppTestApp.swift in Sources */,
 				E2D2D69B2C6F8CD700227981 /* AuthenticationView.swift in Sources */,
 				E2B74B1D2C6F8D6E00007709 /* AuthenticationFlow.swift in Sources */,
+				E2B74B552C71A5B000007709 /* ImagePicker.swift in Sources */,
 				E2B74B2C2C6FB5D700007709 /* PasswordField.swift in Sources */,
 				E2B74B242C6F9A3800007709 /* SignUpView.swift in Sources */,
 				E2B74B302C6FBB7D00007709 /* AuthButton.swift in Sources */,
@@ -315,8 +369,10 @@
 				E2B74B212C6F8F0D00007709 /* LocalizedStrings.swift in Sources */,
 				E2B74B372C70474800007709 /* SignInViewModel.swift in Sources */,
 				E2B74B452C70983C00007709 /* ForgotPasswordViewModel.swift in Sources */,
+				E2B74B5A2C71A7FD00007709 /* AddButtonModifier.swift in Sources */,
 				E2B74B432C70974100007709 /* ForgotPassword.swift in Sources */,
 				E2B74B272C6F9A7F00007709 /* FormValidation.swift in Sources */,
+				E2B74B572C71A63900007709 /* DrawingViewModel.swift in Sources */,
 				E2B74B2A2C6FAE5900007709 /* EmailField.swift in Sources */,
 				E2B74B402C7093EF00007709 /* ForgotTitleModifier.swift in Sources */,
 				E2B74B322C6FBEFE00007709 /* SignUpViewModel.swift in Sources */,
