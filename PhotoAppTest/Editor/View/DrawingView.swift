@@ -92,6 +92,13 @@ struct DrawingView: View {
                     )
                 }
             }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    viewModel.shareImage()
+                }) {
+                    Image(systemName: "square.and.arrow.up")
+                }
+            }
         }
     }
 
