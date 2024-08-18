@@ -77,4 +77,7 @@ final class DrawingViewModel: ObservableObject {
             self.showAlert.toggle()
         }
     }
+
+    func applySelectedFilter() {
+    }
 }

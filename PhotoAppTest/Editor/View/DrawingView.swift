@@ -19,8 +19,7 @@ struct DrawingView: View {
                 let calculatedHeight = screenWidth * aspectRatio
                 let size = CGSize(width: screenWidth, height: calculatedHeight)
 
-                CanvasView(canvas: $viewModel.canvas, imageData: $viewModel.imageData, toolPicker: $viewModel.toolPicker, rect: size)
-                    .background(Color.red)
+                CanvasView(canvas: $viewModel.canvas, imageData: $viewModel.imageData, toolPicker: $viewModel.toolPicker, selectedFilter: $viewModel.selectedFilter, rect: size)
                     .frame(width: size.width, height: size.height)
                     .onAppear() {
                         DispatchQueue.main.async {

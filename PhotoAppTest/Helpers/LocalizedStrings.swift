@@ -39,4 +39,13 @@ struct LocalizedStrings {
     static let takePhoto            = LocalizedStringKey("takePhoto")
     static let photoLibrary         = LocalizedStringKey("photoLibrary")
     static let chooseSource         = LocalizedStringKey("chooseSource")
+
+    //MARK: - Philtres
+
+    static let sepiaTone = LocalizedStringKey("Sepia Tone")
+    static let noir = LocalizedStringKey("Noir")
+    static let chrome = LocalizedStringKey("Chrome")
+    static let instant = LocalizedStringKey("Instant")
+    static let transfer = LocalizedStringKey("Transfer")
+    static let resetFilters = LocalizedStringKey("Reset Filters")
 }

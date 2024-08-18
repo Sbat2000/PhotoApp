@@ -70,6 +70,20 @@
         }
       }
     },
+    "chrome" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chrome"
+          }
+        }
+      }
+    },
+    "Chrome" : {
+
+    },
     "createAccount" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -161,6 +175,20 @@
         }
       }
     },
+    "instant" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Instant"
+          }
+        }
+      }
+    },
+    "Instant" : {
+
+    },
     "invalidEmailError" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -193,6 +221,20 @@
           }
         }
       }
+    },
+    "noir" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Noir"
+          }
+        }
+      }
+    },
+    "Noir" : {
+
     },
     "normal" : {
       "extractionState" : "manual",
@@ -238,6 +280,12 @@
         }
       }
     },
+    "Reset Filters" : {
+
+    },
+    "resetFilters" : {
+      "extractionState" : "manual"
+    },
     "resetPassword" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -267,6 +315,20 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Saved Successfully !!!"
+          }
+        }
+      }
+    },
+    "Sepia Tone" : {
+
+    },
+    "sepiaTone" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sepia Tone"
           }
         }
       }
@@ -328,6 +390,20 @@
           }
         }
       }
+    },
+    "transfer" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Transfer"
+          }
+        }
+      }
+    },
+    "Transfer" : {
+
     },
     "typeHere" : {
       "extractionState" : "manual",
