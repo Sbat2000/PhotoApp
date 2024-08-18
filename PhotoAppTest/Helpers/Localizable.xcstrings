@@ -59,6 +59,17 @@
         }
       }
     },
+    "chooseSource" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Chose source"
+          }
+        }
+      }
+    },
     "createAccount" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -216,6 +227,17 @@
         }
       }
     },
+    "photoLibrary" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Album"
+          }
+        }
+      }
+    },
     "resetPassword" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -292,6 +314,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Small password"
+          }
+        }
+      }
+    },
+    "takePhoto" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Camera"
           }
         }
       }

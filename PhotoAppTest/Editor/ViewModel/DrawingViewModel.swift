@@ -26,6 +26,7 @@ final class DrawingViewModel: ObservableObject {
 
     @Published var showAlert = false
     @Published var message: LocalizedStringKey = ""
+    @Published var sourceType: UIImagePickerController.SourceType = .photoLibrary
 
     func cancelImageEditing() {
         imageData = Data(count: 0)

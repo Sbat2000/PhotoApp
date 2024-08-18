@@ -10,6 +10,7 @@ import SwiftUI
 struct EditorView: View {
 
     @StateObject var viewModel = DrawingViewModel()
+    @State private var showActionSheet = false
 
     var body: some View {
         ZStack {
@@ -29,11 +30,27 @@ struct EditorView: View {
                             }
                     } else {
                         Button {
-                            viewModel.showImagePicker.toggle()
+                            showActionSheet.toggle()
                         } label: {
                             Image(systemName: "plus")
                         }
                         .modifier(AddButtonModifier())
+                        .actionSheet(isPresented: $showActionSheet) {
+                            ActionSheet(
+                                title: Text(LocalizedStrings.chooseSource),
+                                buttons: [
+                                    .default(Text(LocalizedStrings.takePhoto)) {
+                                        viewModel.sourceType = .camera
+                                        viewModel.showImagePicker.toggle()
+                                    },
+                                    .default(Text(LocalizedStrings.photoLibrary)) {
+                                        viewModel.sourceType = .photoLibrary
+                                        viewModel.showImagePicker.toggle()
+                                    },
+                                    .cancel()
+                                ]
+                            )
+                        }
 
                     }
                 }
@@ -92,7 +109,7 @@ struct EditorView: View {
             }
         }
         .sheet(isPresented: $viewModel.showImagePicker) {
-            ImagePicker(showPicker: $viewModel.showImagePicker, imageData: $viewModel.imageData)
+            ImagePicker(showPicker: $viewModel.showImagePicker, imageData: $viewModel.imageData, sourceType: viewModel.sourceType)
         }
         .alert(isPresented: $viewModel.showAlert, content: {
             Alert(title: Text(LocalizedStrings.message), message: Text(viewModel.message), dismissButton: .destructive(Text(LocalizedStrings.ok)))

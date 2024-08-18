@@ -36,4 +36,7 @@ struct LocalizedStrings {
     static let savedSuccessfully    = LocalizedStringKey("savedSuccessfully")
     static let message              = LocalizedStringKey("message")
     static let ok                   = LocalizedStringKey("ok")
+    static let takePhoto            = LocalizedStringKey("takePhoto")
+    static let photoLibrary         = LocalizedStringKey("photoLibrary")
+    static let chooseSource         = LocalizedStringKey("chooseSource")
 }
