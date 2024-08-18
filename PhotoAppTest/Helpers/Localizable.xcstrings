@@ -4,6 +4,17 @@
     "" : {
 
     },
+    "add" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Add"
+          }
+        }
+      }
+    },
     "alertOkButton" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -22,6 +33,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Already have account?"
+          }
+        }
+      }
+    },
+    "cancel" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
           }
         }
       }
@@ -161,6 +183,17 @@
         }
       }
     },
+    "save" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Save"
+          }
+        }
+      }
+    },
     "Sign Out" : {
 
     },
@@ -204,6 +237,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Small password"
+          }
+        }
+      }
+    },
+    "typeHere" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Type here"
           }
         }
       }

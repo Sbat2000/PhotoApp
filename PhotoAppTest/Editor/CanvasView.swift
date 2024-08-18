@@ -24,9 +24,7 @@ struct CanvasView: UIViewRepresentable {
 
 
         if let image = UIImage(data: imageData) {
-
             let imageView = UIImageView(image: image)
-            imageView.backgroundColor = .red
             imageView.contentMode = .scaleAspectFit
             imageView.frame = CGRect(x: 0, y: 0, width: rect.width, height: rect.height)
             imageView.clipsToBounds = true

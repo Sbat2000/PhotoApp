@@ -14,15 +14,59 @@ struct DrawingView: View {
     var body: some View {
         ZStack {
             GeometryReader { proxy -> AnyView in
-                let size = proxy.frame(in: .global).size
-
                 let size = proxy.frame(in: .local).size
                 return AnyView (
-                    CanvasView(canvas: $viewModel.canvas, imageData: $viewModel.imageData, toolPicker: $viewModel.toolPicker, rect: size)
-                        .background(Color.yellow)
+                    ZStack {
+                        CanvasView(canvas: $viewModel.canvas, imageData: $viewModel.imageData, toolPicker: $viewModel.toolPicker, rect: size)
+                        ForEach(viewModel.textBoxes) { box in
+                            Text(viewModel.textBoxes[viewModel.currentIndex].id == box.id && viewModel.addNewBox ? "" : box.text)
+                                .font(.system(size: 30))
+                                .fontWeight(box.isBold ? .bold : .none)
+                                .foregroundStyle(box.textColor)
+                                .offset(box.offset)
+                                .gesture(DragGesture().onChanged({ (value) in
+                                    let current = value.translation
+                                    let lastOffset = box.lastOffset
+                                    let newTranslation = CGSize(width: lastOffset.width + current.width, height: lastOffset.height + current.height)
+                                    viewModel.textBoxes[getIndex(textBox: box)].offset = newTranslation
+                                }).onEnded({ (value) in
+                                    viewModel.textBoxes[getIndex(textBox: box)].lastOffset = value.translation
+                                }))
+                        }
+                    }
                 )
             }
         }
+        .toolbar() {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    
+                }, label: {
+                    Text(LocalizedStrings.save)
+                })
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    viewModel.textBoxes.append(TextBox())
+                    viewModel.currentIndex = viewModel.textBoxes.count - 1
+                    withAnimation {
+                        viewModel.addNewBox.toggle()
+                    }
+                    viewModel.toolPicker.setVisible(false, forFirstResponder: viewModel.canvas)
+                    viewModel.canvas.resignFirstResponder()
+                }, label: {
+                    Image(systemName: "plus")
+                })
+            }
+        }
+    }
+
+    func getIndex(textBox: TextBox) -> Int {
+        let index = viewModel.textBoxes.firstIndex { (box) -> Bool in
+            return textBox.id == box.id
+        } ?? 0
+
+        return index
     }
 }
 
