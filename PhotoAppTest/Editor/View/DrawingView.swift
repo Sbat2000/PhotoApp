@@ -13,44 +13,43 @@ struct DrawingView: View {
 
     var body: some View {
         ZStack {
-            GeometryReader { proxy -> AnyView in
+            if let image = UIImage(data: viewModel.imageData) {
+                let screenWidth = UIScreen.main.bounds.width
+                let aspectRatio = image.size.height / image.size.width
+                let calculatedHeight = screenWidth * aspectRatio
+                let size = CGSize(width: screenWidth, height: calculatedHeight)
 
-                let size = proxy.frame(in: .local)
-
-                DispatchQueue.main.async {
-                    if viewModel.rect == .zero {
-                        viewModel.rect = size
-                    }
-                }
-
-                return AnyView (
-                    ZStack {
-                        CanvasView(canvas: $viewModel.canvas, imageData: $viewModel.imageData, toolPicker: $viewModel.toolPicker, rect: size.size)
-                        ForEach(viewModel.textBoxes) { box in
-                            Text(viewModel.textBoxes[viewModel.currentIndex].id == box.id && viewModel.addNewBox ? "" : box.text)
-                                .font(.system(size: 30))
-                                .fontWeight(box.isBold ? .bold : .none)
-                                .foregroundStyle(box.textColor)
-                                .offset(box.offset)
-                                .gesture(DragGesture().onChanged({ (value) in
-                                    let current = value.translation
-                                    let lastOffset = box.lastOffset
-                                    let newTranslation = CGSize(width: lastOffset.width + current.width, height: lastOffset.height + current.height)
-                                    viewModel.textBoxes[getIndex(textBox: box)].offset = newTranslation
-                                }).onEnded({ (value) in
-                                    viewModel.textBoxes[getIndex(textBox: box)].lastOffset = value.translation
-                                }))
-                                .onLongPressGesture() {
-                                    viewModel.toolPicker.setVisible(false, forFirstResponder: viewModel.canvas)
-                                    viewModel.canvas.resignFirstResponder()
-                                    viewModel.currentIndex = getIndex(textBox: box)
-                                    withAnimation {
-                                        viewModel.addNewBox = true
-                                    }
-                                }
+                CanvasView(canvas: $viewModel.canvas, imageData: $viewModel.imageData, toolPicker: $viewModel.toolPicker, rect: size)
+                    .background(Color.red)
+                    .frame(width: size.width, height: size.height)
+                    .onAppear() {
+                        DispatchQueue.main.async {
+                            viewModel.size = size
                         }
                     }
-                )
+            }
+            ForEach(viewModel.textBoxes) { box in
+                Text(viewModel.textBoxes[viewModel.currentIndex].id == box.id && viewModel.addNewBox ? "" : box.text)
+                    .font(.system(size: 30))
+                    .fontWeight(box.isBold ? .bold : .none)
+                    .foregroundStyle(box.textColor)
+                    .offset(box.offset)
+                    .gesture(DragGesture().onChanged({ (value) in
+                        let current = value.translation
+                        let lastOffset = box.lastOffset
+                        let newTranslation = CGSize(width: lastOffset.width + current.width, height: lastOffset.height + current.height)
+                        viewModel.textBoxes[getIndex(textBox: box)].offset = newTranslation
+                    }).onEnded({ (value) in
+                        viewModel.textBoxes[getIndex(textBox: box)].lastOffset = value.translation
+                    }))
+                    .onLongPressGesture() {
+                        viewModel.toolPicker.setVisible(false, forFirstResponder: viewModel.canvas)
+                        viewModel.canvas.resignFirstResponder()
+                        viewModel.currentIndex = getIndex(textBox: box)
+                        withAnimation {
+                            viewModel.addNewBox = true
+                        }
+                    }
             }
         }
         .toolbar() {
@@ -73,6 +72,16 @@ struct DrawingView: View {
                 }, label: {
                     Image(systemName: "plus")
                 })
+            }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: {
+                    viewModel.showFilterSheet.toggle()
+                }, label: {
+                    Image(systemName: "wand.and.stars")
+                })
+                .sheet(isPresented: $viewModel.showFilterSheet) {
+                    FilterSelectionView(selectedFilter: $viewModel.selectedFilter, showFilterSheet: $viewModel.showFilterSheet)
+                }
             }
         }
     }
