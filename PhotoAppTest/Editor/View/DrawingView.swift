@@ -16,6 +16,7 @@ struct DrawingView: View {
             GeometryReader { proxy -> AnyView in
                 let size = proxy.frame(in: .global).size
 
+                let size = proxy.frame(in: .local).size
                 return AnyView (
                     CanvasView(canvas: $viewModel.canvas, imageData: $viewModel.imageData, toolPicker: $viewModel.toolPicker, rect: size)
                         .background(Color.yellow)
