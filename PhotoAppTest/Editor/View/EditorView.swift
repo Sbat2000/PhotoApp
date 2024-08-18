@@ -45,12 +45,13 @@ struct EditorView: View {
                     .ignoresSafeArea()
 
                 TextField(LocalizedStrings.typeHere, text: $viewModel.textBoxes[viewModel.currentIndex].text)
-                    .font(.system(size: 35))
+                    .font(.system(size: 35, weight: viewModel.textBoxes[viewModel.currentIndex].isBold ? .bold : .regular))
                     .preferredColorScheme(.dark)
                     .foregroundStyle(viewModel.textBoxes[viewModel.currentIndex].textColor)
                     .padding()
                 HStack {
                     Button {
+                        viewModel.textBoxes[viewModel.currentIndex].isAdded = true
                         viewModel.toolPicker.setVisible(true, forFirstResponder: viewModel.canvas)
                         viewModel.canvas.becomeFirstResponder()
                         withAnimation {
@@ -75,8 +76,17 @@ struct EditorView: View {
                     }
                 }
                 .overlay {
-                    ColorPicker("", selection: $viewModel.textBoxes[viewModel.currentIndex].textColor)
-                        .labelsHidden()
+                    HStack(spacing: 15) {
+                        ColorPicker("", selection: $viewModel.textBoxes[viewModel.currentIndex].textColor)
+                            .labelsHidden()
+                        Button {
+                            viewModel.textBoxes[viewModel.currentIndex].isBold.toggle()
+                        } label: {
+                            Text(viewModel.textBoxes[viewModel.currentIndex].isBold ? LocalizedStrings.normal : LocalizedStrings.bold)
+                                .foregroundStyle(Color.white)
+                        }
+
+                    }
                 }
                 .frame(maxHeight: .infinity, alignment: .top)
             }
@@ -84,6 +94,9 @@ struct EditorView: View {
         .sheet(isPresented: $viewModel.showImagePicker) {
             ImagePicker(showPicker: $viewModel.showImagePicker, imageData: $viewModel.imageData)
         }
+        .alert(isPresented: $viewModel.showAlert, content: {
+            Alert(title: Text(LocalizedStrings.message), message: Text(viewModel.message), dismissButton: .destructive(Text(LocalizedStrings.ok)))
+        })
     }
 }
 

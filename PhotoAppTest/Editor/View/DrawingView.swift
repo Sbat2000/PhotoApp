@@ -14,10 +14,18 @@ struct DrawingView: View {
     var body: some View {
         ZStack {
             GeometryReader { proxy -> AnyView in
-                let size = proxy.frame(in: .local).size
+
+                let size = proxy.frame(in: .local)
+
+                DispatchQueue.main.async {
+                    if viewModel.rect == .zero {
+                        viewModel.rect = size
+                    }
+                }
+
                 return AnyView (
                     ZStack {
-                        CanvasView(canvas: $viewModel.canvas, imageData: $viewModel.imageData, toolPicker: $viewModel.toolPicker, rect: size)
+                        CanvasView(canvas: $viewModel.canvas, imageData: $viewModel.imageData, toolPicker: $viewModel.toolPicker, rect: size.size)
                         ForEach(viewModel.textBoxes) { box in
                             Text(viewModel.textBoxes[viewModel.currentIndex].id == box.id && viewModel.addNewBox ? "" : box.text)
                                 .font(.system(size: 30))
@@ -32,6 +40,14 @@ struct DrawingView: View {
                                 }).onEnded({ (value) in
                                     viewModel.textBoxes[getIndex(textBox: box)].lastOffset = value.translation
                                 }))
+                                .onLongPressGesture() {
+                                    viewModel.toolPicker.setVisible(false, forFirstResponder: viewModel.canvas)
+                                    viewModel.canvas.resignFirstResponder()
+                                    viewModel.currentIndex = getIndex(textBox: box)
+                                    withAnimation {
+                                        viewModel.addNewBox = true
+                                    }
+                                }
                         }
                     }
                 )
@@ -40,7 +56,7 @@ struct DrawingView: View {
         .toolbar() {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
-                    
+                    viewModel.saveImage()
                 }, label: {
                     Text(LocalizedStrings.save)
                 })

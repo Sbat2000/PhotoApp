@@ -22,9 +22,15 @@ final class DrawingViewModel: ObservableObject {
 
     @Published var currentIndex: Int = 0
 
+    @Published var rect: CGRect = .zero
+
+    @Published var showAlert = false
+    @Published var message: LocalizedStringKey = ""
+
     func cancelImageEditing() {
         imageData = Data(count: 0)
         canvas = PKCanvasView()
+        textBoxes.removeAll()
     }
 
     func cancelTextView() {
@@ -33,6 +39,41 @@ final class DrawingViewModel: ObservableObject {
         withAnimation {
             addNewBox = false
         }
-        textBoxes.removeLast()
+        if !textBoxes[currentIndex].isAdded {
+            textBoxes.removeLast()
+
+        }
+    }
+
+    func saveImage() {
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 1)
+
+        canvas.drawHierarchy(in: CGRect(origin: .zero, size: rect.size), afterScreenUpdates: true)
+
+        let SwiftUIView = ZStack {
+            ForEach(textBoxes) { [self] box in
+                Text(textBoxes[currentIndex].id == box.id && addNewBox ? "" : box.text)
+                    .font(.system(size: 30))
+                    .fontWeight(box.isBold ? .bold : .none)
+                    .foregroundStyle(box.textColor)
+                    .offset(box.offset)
+            }
+        }
+
+        let controller = UIHostingController(rootView: SwiftUIView).view!
+        controller.frame = rect
+        controller.backgroundColor = .clear
+        canvas.backgroundColor = .clear
+        controller.drawHierarchy(in: CGRect(origin: .zero, size: rect.size), afterScreenUpdates: true)
+
+        let generatedImage = UIGraphicsGetImageFromCurrentImageContext()?.pngData()
+
+        UIGraphicsEndImageContext()
+
+        if let image = generatedImage {
+            UIImageWriteToSavedPhotosAlbum(UIImage(data: image)!, nil, nil, nil)
+            self.message = LocalizedStrings.savedSuccessfully
+            self.showAlert.toggle()
+        }
     }
 }

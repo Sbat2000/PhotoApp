@@ -31,4 +31,9 @@ struct LocalizedStrings {
     static let add                  = LocalizedStringKey("add")
     static let cancel               = LocalizedStringKey("cancel")
     static let typeHere             = LocalizedStringKey("typeHere")
+    static let bold                 = LocalizedStringKey("bold")
+    static let normal               = LocalizedStringKey("normal")
+    static let savedSuccessfully    = LocalizedStringKey("savedSuccessfully")
+    static let message              = LocalizedStringKey("message")
+    static let ok                   = LocalizedStringKey("ok")
 }
