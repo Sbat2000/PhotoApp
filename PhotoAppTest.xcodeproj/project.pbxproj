@@ -93,11 +93,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E2B74B222C6F9A2500007709 /* SignUp */ = {
+		E28AFB3D2C72680400D55C5F /* View */ = {
 			isa = PBXGroup;
 			children = (
 				E2B74B232C6F9A3800007709 /* SignUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E28AFB3E2C72680C00D55C5F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
 				E2B74B312C6FBEFE00007709 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E28AFB3F2C72681A00D55C5F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E2B74B342C70473400007709 /* SignInView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E28AFB402C72682700D55C5F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E2B74B362C70474800007709 /* SignInViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E2B74B222C6F9A2500007709 /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				E28AFB3E2C72680C00D55C5F /* ViewModel */,
+				E28AFB3D2C72680400D55C5F /* View */,
 			);
 			name = SignUp;
 			path = ..;
@@ -126,8 +158,8 @@
 		E2B74B332C70472100007709 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
-				E2B74B342C70473400007709 /* SignInView.swift */,
-				E2B74B362C70474800007709 /* SignInViewModel.swift */,
+				E28AFB3F2C72681A00D55C5F /* View */,
+				E28AFB402C72682700D55C5F /* ViewModel */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -168,12 +200,10 @@
 		E2B74B4E2C71A4DC00007709 /* Editor */ = {
 			isa = PBXGroup;
 			children = (
+				E2B74B512C71A4FF00007709 /* View */,
+				E2B74B522C71A50500007709 /* ViewModel */,
 				E2B74B582C71A7EE00007709 /* ViewModifiers */,
 				E2B74B532C71A50A00007709 /* Model */,
-				E2B74B522C71A50500007709 /* ViewModel */,
-				E2B74B512C71A4FF00007709 /* View */,
-				E2B74B542C71A5B000007709 /* ImagePicker.swift */,
-				E2B74B5D2C71AEED00007709 /* CanvasView.swift */,
 			);
 			path = Editor;
 			sourceTree = "<group>";
@@ -181,6 +211,8 @@
 		E2B74B512C71A4FF00007709 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E2B74B5D2C71AEED00007709 /* CanvasView.swift */,
+				E2B74B542C71A5B000007709 /* ImagePicker.swift */,
 				E2B74B4F2C71A4EA00007709 /* EditorView.swift */,
 				E2B74B5B2C71ADF600007709 /* DrawingView.swift */,
 				E2CC17A72C72149600AC40D8 /* FIlterSelectionView.swift */,
@@ -231,10 +263,10 @@
 		E2D2D67F2C6F889500227981 /* PhotoAppTest */ = {
 			isa = PBXGroup;
 			children = (
-				E2B74B4E2C71A4DC00007709 /* Editor */,
 				E2B74B4A2C709DF600007709 /* Info.plist */,
 				E2D2D6972C6F8C7700227981 /* Authentication */,
-				E2D2D6962C6F8C7100227981 /* Home */,
+				E2B74B4E2C71A4DC00007709 /* Editor */,
+				E2D2D6962C6F8C7100227981 /* Profile */,
 				E2D2D68E2C6F8ABF00227981 /* Helpers */,
 				E2D2D6802C6F889500227981 /* PhotoAppTestApp.swift */,
 				E2D2D6842C6F889700227981 /* Assets.xcassets */,
@@ -261,12 +293,12 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		E2D2D6962C6F8C7100227981 /* Home */ = {
+		E2D2D6962C6F8C7100227981 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				E2D2D6982C6F8C9100227981 /* ProfileView.swift */,
 			);
-			path = Home;
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		E2D2D6972C6F8C7700227981 /* Authentication */ = {
