@@ -108,5 +108,7 @@ extension CanvasView.Coordinator {
 }
 
 #Preview {
-    EditorView()
+    let authController = AuthController()
+    return EditorView()
+        .environmentObject(authController)
 }

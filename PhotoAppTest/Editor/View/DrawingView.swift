@@ -112,5 +112,7 @@ struct DrawingView: View {
 }
 
 #Preview {
-    EditorView()
+    let authController = AuthController()
+    return EditorView()
+        .environmentObject(authController)
 }

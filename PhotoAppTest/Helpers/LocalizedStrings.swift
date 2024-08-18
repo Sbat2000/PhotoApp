@@ -39,6 +39,7 @@ struct LocalizedStrings {
     static let takePhoto            = LocalizedStringKey("takePhoto")
     static let photoLibrary         = LocalizedStringKey("photoLibrary")
     static let chooseSource         = LocalizedStringKey("chooseSource")
+    static let registerLater        = LocalizedStringKey("registerLater")
 
     //MARK: - Philtres
 

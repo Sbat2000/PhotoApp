@@ -280,6 +280,17 @@
         }
       }
     },
+    "registerLater" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I'll register later..."
+          }
+        }
+      }
+    },
     "Reset Filters" : {
 
     },
